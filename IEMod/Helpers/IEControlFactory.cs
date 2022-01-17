@@ -144,7 +144,7 @@ namespace IEMod.Helpers {
 			dropdown.OptionGrid.cellWidth = width;
 			var optGrid = dropdown.OptionGrid;
 			//+ Set the default handler that binds the control to the member
-			dropdown.OnDropdownOptionChangedEvent += option => {
+			dropdown.OnDropdownOptionChanged += option => {
 				var asChoice = (IEDropdownChoice) option;
 				setter((T) asChoice.Value);
 			};

@@ -13,10 +13,10 @@ namespace IEMod.Mods.NoEngagement {
 			{
 				return;
 			}
-			this.LineRenderer.renderer.enabled = (GameState.Paused || GameCursor.CharacterUnderCursor == this.m_Source || GameCursor.CharacterUnderCursor == this.m_Target);
-			this.LineRenderer.renderer.enabled &= InGameHUD.Instance.ShowHUD;
-			this.LineRenderer.renderer.enabled &= !IEModOptions.DisableEngagement; // added this line
-			if (!this.LineRenderer.renderer.enabled)
+			this.LineRenderer.GetComponent<Renderer>().enabled = (GameState.Paused || GameCursor.CharacterUnderCursor == this.m_Source || GameCursor.CharacterUnderCursor == this.m_Target);
+			this.LineRenderer.GetComponent<Renderer>().enabled &= InGameHUD.Instance.ShowHUD;
+			this.LineRenderer.GetComponent<Renderer>().enabled &= !IEModOptions.DisableEngagement; // added this line
+			if (!this.LineRenderer.GetComponent<Renderer>().enabled)
 			{
 				return;
 			}

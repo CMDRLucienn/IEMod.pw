@@ -334,7 +334,7 @@ namespace IEMod.Mods.Options {
 			disDisposition2.Width = 150;
 
             //REPLACES ORIGINAL CODE WITH SOME TWEAKED LINES (mostly due to changed number of tabs)
-            this.PageButtonGroup.OnRadioSelectionChangedEvent += new UIRadioButtonGroup.RadioSelectionChanged(this.OnChangePage); // changed to Event
+            this.PageButtonGroup.OnRadioSelectionChanged += new UIRadioButtonGroup.RadioSelectionChanged(this.OnChangePage); // changed to Event
 			this.m_PageButtonGrid = this.PageButtonGroup.GetComponent<UIGrid>();
 			this.m_PageButtons = new UIMultiSpriteImageButton[9];
 			this.m_PageButtons[0] = this.PageButtonPrefab;
@@ -381,8 +381,8 @@ namespace IEMod.Mods.Options {
 			this.VoiceFrequency.Slider.OnChanged = (UIOptionsSlider.OnSettingChanged) Delegate.Combine(this.VoiceFrequency.Slider.OnChanged, new UIOptionsSlider.OnSettingChanged(this.OnVoiceFrequencyChanged));
 			this.ScrollSpeed.Slider.OnChanged = (UIOptionsSlider.OnSettingChanged) Delegate.Combine(this.ScrollSpeed.Slider.OnChanged, new UIOptionsSlider.OnSettingChanged(this.OnScrollSpeedChanged));
 
-			this.LanguageDropdown.OnDropdownOptionChangedEvent += new UIDropdownMenu.DropdownOptionChanged(this.OnLanguageChanged); // changed to Event
-			this.ResolutionDropdown.OnDropdownOptionChangedEvent += new UIDropdownMenu.DropdownOptionChanged(this.OnResolutionChanged); // changed to Event
+			this.LanguageDropdown.OnDropdownOptionChanged += new UIDropdownMenu.DropdownOptionChanged(this.OnLanguageChanged); // changed to Event
+			this.ResolutionDropdown.OnDropdownOptionChanged += new UIDropdownMenu.DropdownOptionChanged(this.OnResolutionChanged); // changed to Event
 			this.QualitySlider.Slider.OnChanged = (UIOptionsSlider.OnSettingChanged) Delegate.Combine(this.QualitySlider.Slider.OnChanged, new UIOptionsSlider.OnSettingChanged(this.OnQualityChanged));
 			this.FrameRateMaxSlider.Slider.OnChanged = (UIOptionsSlider.OnSettingChanged) Delegate.Combine(this.FrameRateMaxSlider.Slider.OnChanged, new UIOptionsSlider.OnSettingChanged(this.OnMaxFPSChanged));
 

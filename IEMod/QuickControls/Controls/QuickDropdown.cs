@@ -49,7 +49,7 @@ namespace IEMod.QuickControls {
 
 			SelectedValue = BindingValue.Member(() => this.selectedValue).ToBindable();
 			Options = new List<DropdownChoice<T>>();
-			DropdownComponent.OnDropdownOptionChangedEvent += x => SelectedValue.NotifyChange();
+			DropdownComponent.OnDropdownOptionChanged += x => SelectedValue.NotifyChange();
 			IEDebug.Log("Created: " + name);
 		}
 
